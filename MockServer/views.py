@@ -9,11 +9,12 @@ from MockServer.response import VALID, INVALID
 from MockServer.validator import domain_server
 
 
-@app.route('/index/')
+@app.route('/index/',methods=["GET"])
 def index():
     p = models.Project.query.order_by(desc('id'))
     m = models.Api.query.all()
     return render_template('index.html', p=p, m=m)
+
 
 
 class ProjectAPI(MethodView):
@@ -21,6 +22,8 @@ class ProjectAPI(MethodView):
         project_info = request.json
         msg = insert_project(**project_info)
         return json.dumps(msg, ensure_ascii=False)
+
+
 
 
 class MockApi(MethodView):

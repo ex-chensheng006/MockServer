@@ -4,6 +4,7 @@ Mock Server
 Design Philosophy
 -----------------
 基于Flask的简易mock平台
+python3.9使用方法
 
 Key Features
 ------------
@@ -37,4 +38,11 @@ Key Features
 6. Start Server
     ```bash
     python run.py
+    ```
+   
+
+7.修改源码 time.clock--》time.perf_counter()
+    ```bash
+D:\Code\Envs\MockServer\lib\site-packages\flask_sqlalchemy\__init__.py
+D:\Code\Envs\MockServer\lib\site-packages\sqlalchemy\util\compat.py
     ```

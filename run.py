@@ -12,5 +12,6 @@ app.add_url_rule('/mocks/', defaults={'api_id': None}, view_func=mock_view, meth
 app.add_url_rule('/mocks/', view_func=mock_view, methods=['POST', ])
 app.add_url_rule('/mocks/<int:api_id>/', view_func=mock_view, methods=['GET', 'PUT', 'DELETE'])
 
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run('0.0.0.0',debug=True,ssl_context=('ssl/nginx.crt','ssl/nginx.key'))
